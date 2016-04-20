@@ -1,0 +1,6 @@
+This refactor took five cards out of the switch statement in the cardEffect function and gave them functions of their own. 
+The five cards were, smithy, village, great hall, steward and council room. Smithy, council room, and village only required three parameters
+current player, game state, and hand pos. The great hall and steward required extra parameters for the choices the player makes when playing the card.
+The refactoring process itself was easy. The code inside the function is essentially the same as the code inside the switch statements, and all the functions
+handle the discarding of the cards.
+Each new function is marked with a comment. 
