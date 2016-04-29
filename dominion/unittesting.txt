@@ -1,0 +1,9 @@
+I'm honestly not sure if I've done everything right. After playing a couple games and running my tests 
+the total coverage was only 18.76% percent, which is pretty weak. My unit tests aren't very comprehensive
+either which could certianly explain why. My unit test for gardens fails, which is interesting as its a card
+whose implementation looks fairly straighfoward in dominion.c. 
+
+The unit test themselves were simple enough to write, getting the makefile to output all of them into one
+file took the most research. I had a few problems with getting gcov to run on dominion.c. The error that was
+returned was about mismatched "notes." It had something to do with one of the gcov files being created first. 
+After I ran "make clean" and deleted the unittestresults.out file, it seemed to magically fix the problem.  
