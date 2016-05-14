@@ -1,0 +1,8 @@
+I'm much happier with the coverage I achieved this time around. Both the village and the smithy test achieved 100% coverage.
+For adventurer I was able to achieve 90.91% coverage. To test how correct my tests were I made it so that both smithy and village
+drew zero cards, and in this case both tests failed. Some of adventurer I failed to cover, as I couldn't get the drawntreausre variable
+to work correctly in my test. 
+
+Both the smithy and village took relatively little time to achieve 100% coverage, under 20 seconds for both.The coverage from 
+these tests was much more comprehensive than those of the unit tests. But again, that is because my unit tests weren't very good.
+I'm actually going to go back this weekend and update the unit tests as I believe I can do much better.  

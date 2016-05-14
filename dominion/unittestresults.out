@@ -10,3 +10,28 @@ File 'dominion.c'
 Lines executed:18.76% of 565
 Creating 'dominion.c.gcov'
 
+TEST 1 HAS PASSED. 
+TEST 1 HAS PASSED. 
+TEST 2 HAS PASSED. 
+TEST 3 HAS PASSED. 
+TEST 4 HAS PASSED. 
+TEST 5 HAS PASSED. 
+TEST 6 HAS PASSED. 
+TEST 7 HAS failed. 
+TEST 8 HAS PASSED. 
+File 'dominion.c'
+Lines executed:18.76% of 565
+Creating 'dominion.c.gcov'
+
+TEST 1 HAS PASSED. 
+TEST 2 HAS PASSED. 
+TEST 3 HAS PASSED. 
+TEST 4 HAS PASSED. 
+TEST 5 HAS PASSED. 
+TEST 6 HAS PASSED. 
+TEST 7 HAS failed. 
+TEST 8 HAS PASSED. 
+File 'dominion.c'
+Lines executed:18.76% of 565
+Creating 'dominion.c.gcov'
+

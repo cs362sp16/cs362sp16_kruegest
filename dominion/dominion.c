@@ -29,7 +29,7 @@ int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
   k[5] = k6;
   k[6] = k7;
   k[7] = k8;
-  k[8] = k9;
+  k[8] = k9; 
   k[9] = k10;
   return k;
 }
@@ -643,7 +643,6 @@ int getCost(int cardNumber)
   return -1;
 }
 
-//moved smithy from card effect switch statement
 int smithyEffect(int currentPlayer,  int handPos, struct gameState *state){
 
     int x;
@@ -656,7 +655,6 @@ int smithyEffect(int currentPlayer,  int handPos, struct gameState *state){
     return 0;
 }
 
-//moved village from card effect switch statement
 int villageEffect(int currentPlayer, struct gameState *state, int handPos){
       //+1 Card
       drawCard(currentPlayer, state);
@@ -669,7 +667,6 @@ int villageEffect(int currentPlayer, struct gameState *state, int handPos){
       return 0;
 }
 
-//moved great hall from card effect switch statement
 int great_hallEffect(int currentPlayer, int handPos,  struct gameState *state){
 
         //+1 Card
@@ -684,8 +681,6 @@ int great_hallEffect(int currentPlayer, int handPos,  struct gameState *state){
 
 }
 
-
-//moved steward from card effect switch statement
 int stewardEffect(int currentPlayer, int choice1,  int choice2, int choice3, int handPos, struct gameState *state){
 
 if (choice1 == 1)
@@ -712,7 +707,6 @@ if (choice1 == 1)
 
 }
 
-//moved council room from card effect switch statement
 int council_roomEffect(int currentPlayer, struct gameState *state, int handPos){
 
     int i;
@@ -788,7 +782,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
     case council_room:
       //+4 Cards
-    coucil_roomEffect(currentPlayer,state,handPos);
+      for (i = 0; i < 4; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
+
+      //+1 Buy
+      state->numBuys++;
 
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
@@ -927,7 +927,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 
 
     case village:
-     //+1card, +2actions
+
         villageEffect(currentPlayer, state, handPos);
 
     case baron:
@@ -982,7 +982,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case great_hall:
-    //1VP +1card, +1action
+
      great_hallEffect(currentPlayer, state, handPos);
 
     case minion:
@@ -1037,7 +1037,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case steward:
-        //Choose one: +2cards, trash 2 cards, +2coin
       stewardEffect(currentPlayer, choice1, choice2, choice3, handPos, state);
 
     case tribute:

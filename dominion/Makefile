@@ -41,6 +41,26 @@ cardTest3:
 cardTest4:
 	gcc -fprofile-arcs -ftest-coverage  dominion.c cardTest4.c rngs.c -o cardtest4 -lm -g
 
+randomtestcard1: randomtestcard1.c dominion.o 
+	gcc -fprofile-arcs -ftest-coverage  dominion.c randomtestcard1.c rngs.c -o randomtestcard1 -lm -g
+
+randomtestcard2:
+	gcc -fprofile-arcs -ftest-coverage  dominion.c randomtestcard2.c rngs.c -o randomtestcard2 -lm -g
+
+randomtestadventurer:
+	gcc -fprofile-arcs -ftest-coverage  dominion.c randomtestadventurer.c rngs.c -o randomtestadventurer -lm -g
+
+randomtestcard1.out: randomtestcard1 dominion.c dominion.h rngs.o -lm
+	./randomtestcard1 42 
+	gcov dominion.c >> randomtestcard1.out
+
+randomtestcard2.out: randomtestcard2 dominion.c dominion.h rngs.o -lm
+	./randomtestcard2 42 
+	gcov dominion.c >> randomtestcard2.out 
+
+randomtestadventurer.out: randomtestadventurer dominion.c dominion.h rngs.o -lm
+	./randomtestadventurer 42 
+	gcov dominion.c >> randomtestadventurer.out 	
 
 unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4  cardTest1 cardTest2 cardTest3 cardTest4 dominion.c dominion.h rngs.o -lm
 	./unittest1 >> unittestresults.out 
@@ -55,5 +75,5 @@ unittestresults.out: unitTest1 unitTest2 unitTest3 unitTest4  cardTest1 cardTest
 
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	rm -f *.o playdom.exe playdom test.exe test player randomtestcard1 randomtestcard2 randomtestadventurer unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
  

@@ -16,7 +16,7 @@ int testFullDeckCount(){
 	int expectedVal = 7;
 	int testVal = 7;
 
-	int testVal = fullDeckCount(0,1, &state);
+	//int testVal = fullDeckCount(0,1, &state);
 
 	assert(expectedVal == testVal);
 
