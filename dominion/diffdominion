@@ -1,0 +1,22 @@
+#!/bin/bash
+
+make -C myDom dominion.o 
+make -C classDom dominion.o 
+
+cp myDom dominion.o 
+make testdominion
+
+cp classDom dominion.o 
+make testdominion
+
+diff output1 output2 > outputdiff
+
+if [$? == 0]
+then
+	echo 'Test Passed'
+	rm outputdiff
+else
+	echo 'Test Failed'
+
+rm output1
+rm output2

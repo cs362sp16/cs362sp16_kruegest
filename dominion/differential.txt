@@ -1,0 +1,4 @@
+I'm pretty awful when it comes to writing scripts and wasnt able to get diffdominion completely working. However
+running diff by hand I was able to do some differential testing. Our code and our outputs are very differnt
+and mine definitely didnt pass the test. Using differential testing isnt the best for this project
+considering that neither testdominion is probably good enough to be considered an oracle. 

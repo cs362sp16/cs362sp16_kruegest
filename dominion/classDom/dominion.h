@@ -16,7 +16,8 @@
 /* hand# means index of a card in current active player's hand */
 
 enum CARD
-  {curse = 0,
+{
+   curse = 0,
    estate,
    duchy,
    province,
@@ -50,7 +51,7 @@ enum CARD
    salvager, /* choice1 = hand# to trash */
    sea_hag,
    treasure_map
-  };
+};
 
 struct gameState {
   int numPlayers; //number of players
@@ -77,9 +78,6 @@ struct gameState {
    unless specified for other return, return 0 on success */
 
 struct gameState* newGame();
-
-int* kingdomCards(int k1, int k2, int k3, int k4, int k5, int k6, int k7,
-		  int k8, int k9, int k10);
 
 int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 		   struct gameState *state);
@@ -109,7 +107,7 @@ int handCard(int handNum, struct gameState *state);
 int supplyCount(int card, struct gameState *state);
 /* How many of given card are left in supply */
 
-int fullDeckCount(int player, int card, struct gameState *state);
+int fullDeckCount(int player, struct gameState *state);
 /* Here deck = hand + discard + deck */
 
 int whoseTurn(struct gameState *state);
@@ -119,12 +117,6 @@ int endTurn(struct gameState *state);
    if game is over */
 
 int isGameOver(struct gameState *state);
-
-int smithyEffect(int currentPlayer,  int handPos, struct gameState *state);
-int villageEffect(int currentPlayer, int handPos, struct gameState *state);
-int great_hallEffect(int currentPlayer, int handPos,  struct gameState *state);
-int council_roomEffect(int currentPlayer, int handPos,  struct gameState *state);
-
 
 int scoreFor(int player, struct gameState *state);
 /* Negative here does not mean invalid; scores may be negative,
