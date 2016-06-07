@@ -1,0 +1,12 @@
+
+Tester: Stephen Krueger
+Onid of Coder: wangzhao
+
+Bug – Smithy only draws 2 cards, not 3
+Fault Location – fault is in function_renamed_Smithy()
+Test: unit test
+	-failed case: numCardsInHand+3 == state.handCount[player]
+
+Severity: Medium
+Priority: High
+Reasoning for Severity/Priority: Every time the card is in the game players get 2/3 of the functionality for the full cost of the card. 

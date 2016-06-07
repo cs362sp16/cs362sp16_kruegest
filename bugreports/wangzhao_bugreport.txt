@@ -1,0 +1,13 @@
+
+
+Tester: Stephen Krueger
+Onid of Coder: wangzhao
+
+Bug – Council Room only draws 3 cards, not 4
+Fault Location – fault is in function_renamed_council_room()
+Test: random tester
+	-failed case: numCardsInHand+4 == state.handCount[player]
+
+Severity: Medium 
+Priority: High
+Reasoning for severity/priority: Every time the card is in the game it functions incorrectly, that fourth card could be that extra gold you need to get that providence. 
