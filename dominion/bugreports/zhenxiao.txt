@@ -1,0 +1,11 @@
+Tester: Stephen Krueger
+Onid of Coder: zhenxiao
+
+Bug – village only gives one action instead of two
+Fault Location – fault is in fvillage()
+Test: random test
+	-failed case: playerActions+2 == state.numActions
+
+Severity: Medium
+Priority: High
+Reason for severity/priority: Players dont get full effect every time its in the game. Not having that extra action makes village lose most of its benefit.

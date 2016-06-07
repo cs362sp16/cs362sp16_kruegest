@@ -1,0 +1,8 @@
+Stephen Krueger
+Mutation Testing
+CS362
+
+
+	Mutation testing is a method of testing that is used to make sure that your tests are solid. Mutation testing will create mutants of your source code. Mutation coverage will basically change some syntax in the code and then see how many of these mutations that your test case can find. Mutation testing creates tests that change elements of the source code, for instance changing a plus to a minus or a greater than to a less than.  You would have to make sure that the test hits the code that has been mutated, that the code produces and infection/error state, and that it propagates through the code. The amount of mutants found (killed) can give you an idea of how robust your test case is.  
+	I decided to do mutant testing on a classmates code. After obtaining the mutants I ran my tests on them. In some situations the tests would still pass despite there being a bug in the code. For instance my one test would make sure that the number of cards in a players hand after playing a smithy, which draws three cards, is greater than it was before hand, but not that it only added three cards. This leads me to believe that mutation testing is more about evaluating the quality of the tests instead of the quality of the code base. Unit testing or random testing is much more effective for testing the actual code itself. 
+	Mutation testing is still valuable, as it lets you see the holes in your test cases. This can then improve your code base. As the test case becomes more robust it can find more bugs which can then, in turn, clean up the code your testing. 

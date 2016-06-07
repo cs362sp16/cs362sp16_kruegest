@@ -12,6 +12,7 @@ int testSmithy(int seed, int players){
 	//Init game
 	srand(seed);
 	int numbGames = rand()%400+1;
+    int options[] = {0};
 	printf("numbgames: =%d", numbGames);
 	int i;
 	for(i=0; i<numbGames; i++){
@@ -20,7 +21,7 @@ int testSmithy(int seed, int players){
 				 adventurer, ambassador, steward, great_hall, minion};
 		int player = state.whoseTurn;
 		initializeGame(players, k, seed, &state);
-		int expectedVal = smithyEffect(player, -1, &state);
+		int expectedVal = cardEffect(smithy, options[0],options[1],options[2], &state, -1, NULL);
 		int numCardsInHand = state.handCount[player];
 		if(expectedVal==0){
 			if(numCardsInHand <= state.handCount[player]){

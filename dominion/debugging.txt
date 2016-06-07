@@ -1,0 +1,9 @@
+Debugging report 
+
+There was a bug in the cardEffect function when trying to play the adventure card. When first testing the adventurer card I only checked to see if the number of cards in the player's hand and the number of coins in the player’s treasury were greater than what they were before the card was played. While doing more focused testing I realized that the hand count of the player was one more than there should be. 
+
+After a quick analysis of the function and related code I made the assumption that the error was most likely in cardEffect and not a problem with game initialization, draw cards, or any other functions. I set a breakpoint at line 770 in my dominion.c, an if statement that keeps track of how many treasures were drawn. I checked to make sure that the number of cards drawn plus the original hand was equal to the amount of cards in the player's hand after adventurer was played. It was still one card greater than it should be. 
+
+After realizing that the correct number of cards were drawn, I quickly came to the conclusion that the card must not get discarded after it is played. The function was in fact missing the call to discard the card, which was a very quick fix.
+
+A few of Agan’s rules proved useful when debugging adventurer. After working with my dominion.c for the whole term, Agan’s first rule, understanding the system, was definitely effective. I was able to localize the bug pretty quickly just knowing that cardEffect is prone to bugs and that the initialization and draw card functions were pretty solid. Agan’s fourth rule, Divide and Conquer was also useful. I sectioned the function into parts and tested each part of the function to make sure the error wasn’t in that section of code. His ninth rule is probably the most important, if you didn’t fix it, it ain’t fixed. I ran my tests again to make sure that the code was fixed!   
